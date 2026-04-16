@@ -557,6 +557,7 @@ def test_command_output_without_trailing_newline(tmp_path: Path) -> None:
       printf 'hello' -> stdout: "hello__LC_SHELL_DONE__... 0"
     caused startswith(marker) to fail.
     """
+    
     middleware = ShellToolMiddleware(workspace_root=tmp_path / "workspace")
     runtime = Runtime()
     state = _empty_state()
